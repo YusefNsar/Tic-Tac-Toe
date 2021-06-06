@@ -1,0 +1,264 @@
+.App {
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  background-color: #f5f5f5;
+  background: var(--appBackground);
+}
+
+a {
+  color:inherit;
+  text-decoration: none;
+}
+
+#title {
+  color: var(--titleColor);
+  -webkit-text-stroke: var(--titleStroke);
+  font-weight: 500;
+  margin: 0 auto 0 auto;
+  padding: 10px;
+  font-size: 9vw;
+  filter:drop-shadow(2px 2px 3px #0B0014);
+}
+
+.stylesButton {
+  position: absolute;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  left: 20px;
+  bottom: 20px;
+  color: var(--themeButtonColor);
+  background-color: var(--themeButtonBGColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonStyle {
+  width: 12vw;
+  min-width: 60px;
+  max-width: 200px;
+  height: 6vw;
+  min-height: 30px;
+  max-height: 100px;
+  color: var(--buttonColor);
+  background: var(--buttonBGColor);
+  border: 0;
+  border-radius: 10px;
+  font-size: 1.2vw;
+  box-shadow: 2px 2px 5px black;
+  transition: 0.06s;
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+@media screen and (max-width: 700px) {
+  .buttonStyle {
+    font-size: 9px;
+  }
+}
+
+.buttonStyleAssests {
+  &:active {
+    color: var(--buttonHover);
+  }
+}
+
+.buttonStyle2 {
+    width: 6vw;
+    height: 6vw;
+    &:active {
+      color: var(--buttonHover);
+    }
+}
+
+@keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.menuIcons {
+  height: 10vw;
+  animation: rot 10s ease 1s infinite;
+}
+
+@keyframes rot2 {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.menuIcons2 {
+  height: 10vw;
+  animation: rot2 10s ease 1s infinite;
+}
+
+.centering {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// game
+.play-space {
+  position:absolute;
+  width: 100%;
+  height: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.player1 {
+  background-color: var(--playerUnactive);
+  position: relative;
+  height: 50%;
+  width: 80%;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  text-align: center;
+  line-height: 50px;
+  vertical-align: middle;
+  transition: 0.5s;
+  & > p {
+    margin: 0;
+    font-size: 3vw;
+    position: relative;
+    top: 5%;
+    left: -15%;
+    color: var(--playerNameColor);
+  }
+}
+
+.player2 {
+  background-color: var(--playerUnactive);
+  position: relative;
+  height: 50%;
+  width: 80%;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  text-align: center;
+  line-height: 50px;
+  vertical-align: middle;
+  transition: 0.5s;
+  & > p {
+    margin: 0;
+    font-size: 3vw;
+    position: relative;
+    top: 5%;
+    left: 15%;
+    color: var(--playerNameColor);
+  }
+}
+
+.turn {
+  background-color: var(--playerActive);
+  box-shadow: 2px 2px 10px black;
+  animation: scaleTurnPlayer 3s linear 0s infinite;
+}
+
+@keyframes scaleTurnPlayer {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+// the play ground
+.ground-cells {
+  background: var(--cellUnactive);
+  border-radius: 10%;
+  width: 30%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:hover {
+    transform: scale(1.03);
+    transition: 0.2s;
+    background: var(--cellHover);
+  }
+  &:active {
+    background: var(--cellActive);
+  }
+}
+
+.used-ground-cells {
+  background: var(--cellActive);
+  border-radius: 10%;
+  width: 30%;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ground-rows {
+  position: relative;
+  height: 20%;
+}
+
+.cell-char {
+  font-size: 2.2vw;
+  margin: 0;
+}
+@media screen and (max-width: 600px) {
+  .cell-char {
+    font-size: 8px;
+  }
+}
+
+.MuiDialog-root {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select:none;
+  user-select:none;
+  -o-user-select:none;
+}
+
+.MuiDialogContent-root {
+  @extend .centering;
+  flex-direction: column;
+}
+
+.MuiDialogActions-root {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.winnerImg {
+  position: relative;
+  width: 70%;
+  margin-bottom: 10px;
+  filter: drop-shadow(2px 2px 3px black);
+}
+
+.glance-item {
+  position: absolute;
+  top: 20px;
+  left: 10px;
+}
+
+.sticker {
+  height: 150px;
+  position: absolute;
+  top: 3%;
+  left: 1%;
+  z-index: 100;
+}

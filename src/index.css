@@ -1,0 +1,45 @@
+html {
+  height: 100%;
+  margin: 0;
+}
+body {
+  text-decoration: none;
+  margin: 0;
+  height: 100%;
+  font-family: cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  text-decoration: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select:none;
+  user-select:none;
+  -o-user-select:none;
+}
+#root {
+  height: 100%;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+:root {
+  /* menu */
+  --appBackground: linear-gradient(90deg,#b92b27, #1565C0);
+  --titleColor: black;
+  --titleStroke: 1px white;
+  --themeButtonBGColor: black;
+  --themeButtonColor: white;
+  --buttonBGColor: linear-gradient(45deg,#000, #434343);
+  --buttonColor: white;
+  --buttonHover: #FFDF00;
+  /* game */
+  --playerNameColor: black;
+  --playerUnactive: #134566;
+  --playerActive: hsl(203, 83%, 56%);
+  --cellUnactive: rgba(255, 255, 255, 0.03);
+  --cellActive: rgba(255, 255, 255, 0.1);
+  --cellHover: rgba(255, 255, 255, 0.06);
+}
